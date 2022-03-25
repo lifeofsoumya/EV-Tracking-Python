@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt 
 
-filedata = pd.read_excel('v1.xlsx')
+filedata = pd.read_excel('v2.xlsx')
 
 names = filedata['current'].values.tolist() # array creation from excel
 count = 0 # used to iterate loop
@@ -13,17 +13,17 @@ zeroRows = 0 # Counts how many isZero is there
 # print (int(names))
 
 while(count < len(names)):
-    if (int(names[count])) == 0:
+    if (names[count]) == 0:
         print(count) # iterate number printing to debug problems
         isZero = isZero + 1
         if isZero > 8: # assuming it takes 8 zeros to stop while de-accelerating
             zeroRows = zeroRows + 1
             isZero = 0
-            if (int(names[count+1])) == 0:
+            if (names[count+1]) == 0:
                 isZero = 0  #reset zero count 0
                 continue
     else:
-        moddata.append((int(names[count])))
+        moddata.append((names[count]))
     count = count + 1
 
 print("okay first loop done")
@@ -44,9 +44,9 @@ def convert(seconds):
     return "%d:%02d:%02d" % (hour, minutes, seconds)
     
 
-print(convert(onSeconds))
+print("Total on time: ", convert(onSeconds))
 
-# at 19kmph speed we get distance =
+# assuming speed = 19 kilometers per hour
 
 speed = 19 # kilometers per hour
 
