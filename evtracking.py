@@ -50,7 +50,7 @@ print("Total on time: ", convert(onSeconds))
 
 speed = 19 # kilometers per hour
 
-dist = (onSeconds/(speed*3600))
+dist = ((onSeconds*speed)/3600)
 
 print("Average distance covered: ", dist) # accilaration negotiated | to be found out using current values
 print("number of 8 zero stacks are", zeroRows)
